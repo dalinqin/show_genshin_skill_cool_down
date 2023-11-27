@@ -1,4 +1,4 @@
-﻿using System.Drawing;
+using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Timers;
@@ -140,7 +140,7 @@ public partial class MainWindow : Window
         }
         else
         {
-            elementskillkey = Key.E; // 或任何您选择的默认键
+            elementskillkey = Key.E; 
         }
 
         if (Enum.TryParse(showhidekeyString, true, out Key hideKey))
@@ -149,8 +149,8 @@ public partial class MainWindow : Window
         }
         else
         {
-            Console.WriteLine("无法解析技能键配置项，使用默认值。");
-            showhidekey = Key.F11; // 或任何您选择的默认键
+            
+            showhidekey = Key.F11; 
         }
 
         Rect_area = new Dictionary<int, Rectangle>();
@@ -160,7 +160,7 @@ public partial class MainWindow : Window
         Rect_area[2] = charRect2;
         Rect_area[3] = charRect3;
 
-        //载入数字和点的模板
+
         // numberTemplates = new Dictionary<int, Mat>();
         // for (var i = 0; i <= 9; i++)
         //     numberTemplates[i] = Cv2.ImRead($@"C:\root\code\c#\numbers\{i}.png", ImreadModes.Grayscale);
@@ -176,10 +176,10 @@ public partial class MainWindow : Window
             }
         }
 
-        timer = new Timer(duration * 1000); // duration是秒数，Timer期望的是毫秒数
-        timer.Elapsed += OnTimedEvent; // 使用Elapsed事件而不是Tick
-        timer.AutoReset = true; // 设置为True让定时器重复触发
-        timer.Enabled = true; // 启动定时器
+        timer = new Timer(duration * 1000); 
+        timer.Elapsed += OnTimedEvent; 
+        timer.AutoReset = true; 
+        timer.Enabled = true; 
     }
     
     
@@ -192,17 +192,16 @@ public partial class MainWindow : Window
         var brush = new SolidColorBrush(Colors.Yellow);
         border.Background = brush;
 
-        // 创建不透明度动画以实现闪烁效果
+
         var opacityAnimation = new DoubleAnimation
         {
-            From = 1.0, // 完全不透明
-            To = 0.0, // 完全透明
+            From = 1.0, 
+            To = 0.0, 
             Duration = TimeSpan.FromSeconds(0.5),     //repeat every 0.5 second
             AutoReverse = true,
             RepeatBehavior = new RepeatBehavior(3) // repeat three times
         };
 
-        // 动画完成后，将背景色变回透明
         opacityAnimation.Completed += (s, e) => { brush.Color = Colors.Transparent; };
 
         brush.BeginAnimation(Brush.OpacityProperty, opacityAnimation);
@@ -214,7 +213,7 @@ public partial class MainWindow : Window
     {
         Dispatcher.Invoke(() =>
         {
-            // 更新每个 TextBlock 的文本
+
             TextBlock1.Text = cooldown_digits[0].ToString("0.#");
             TextBlock2.Text = cooldown_digits[1].ToString("0.#");
             TextBlock3.Text = cooldown_digits[2].ToString("0.#");
@@ -265,7 +264,7 @@ public partial class MainWindow : Window
             catch (Exception ex)
             {
                 //Console.WriteLine(ex);
-                UpdateUI(); // 发生异常时在UI显示0或错误信息
+                UpdateUI(); 
             }
         });
     }
@@ -303,16 +302,14 @@ public partial class MainWindow : Window
             var dpiX = source.CompositionTarget.TransformToDevice.M11;
             var dpiY = source.CompositionTarget.TransformToDevice.M22;
 
-            // 设定的屏幕坐标
+
             double screenX = 2970;
             double screenY = 440;
             //double screenY = 1600;
 
-            // 调整坐标以考虑 DPI 缩放
             var adjustedX = screenX / dpiX;
             var adjustedY = screenY / dpiY;
 
-            // 设置窗口位置
             Left = adjustedX;
             Top = adjustedY;
             Height = (1200 - 420) / dpiY;
