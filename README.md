@@ -1,6 +1,8 @@
- # Raiden Project
 
-This project provides a user interface application that captures screen regions, recognizes images, and displays recognized numbers with high precision and speed.
+# Raiden Project for Genshin Impact
+
+This project provides a user interface application specifically designed for Genshin Impact players. It captures screen regions, recognizes images, and displays recognized numbers to track the cooldown of element skills with high precision and speed. This utility is particularly useful for Genshin Impact as the game does not natively display cooldown timers for element skills, allowing players to optimize their gameplay by knowing exactly when their skills are ready to use again.
+
 
 ## Features
 
