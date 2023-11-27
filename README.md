@@ -26,6 +26,7 @@ Default key settings:
 
 ## Usage
 
+0. Download the two zip files and extract to a directory ,modify key if you like .
 1. Start the application. It will automatically hook into the keyboard events.
 2. Press the designated `elementSkillKey` to activate the element skill.
 3. The UI will animate the background of text blocks to indicate the cooldown status.
