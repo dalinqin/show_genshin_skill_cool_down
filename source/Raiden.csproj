@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UseWPF>true</UseWPF>
+        <RootNamespace>Raiden</RootNamespace>
+        <AssemblyName>Raiden</AssemblyName>
+        <ApplicationIcon>raiden.ico</ApplicationIcon>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="OpenCvSharp4" Version="4.8.0.20230708" />
+        <PackageReference Include="OpenCvSharp4.Extensions" Version="4.8.0.20230708" />
+        <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.8.0.20230708" />
+        <PackageReference Include="OpenCvSharp4.Windows" Version="4.8.0.20230708" />
+        <PackageReference Include="OpenCvSharp4.WpfExtensions" Version="4.8.0.20230708" />
+        <PackageReference Include="System.Core" Version="3.5.21022.801" />
+        <PackageReference Include="System.Drawing.Common" Version="8.0.0" />
+        <PackageReference Include="System.Windows.Extensions" Version="8.0.0" />
+        <PackageReference Include="Vanara.PInvoke.Kernel32" Version="4.0.0-beta" />
+        <PackageReference Include="Vanara.PInvoke.Shared" Version="4.0.0-beta" />
+        <PackageReference Include="Vanara.PInvoke.User32" Version="4.0.0-beta" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="image\0.png" />
+      <Resource Include="image\0.png" />
+      <None Remove="image\1.png" />
+      <Resource Include="image\1.png" />
+      <None Remove="image\2.png" />
+      <Resource Include="image\2.png" />
+      <None Remove="image\3.png" />
+      <Resource Include="image\3.png" />
+      <None Remove="image\4.png" />
+      <Resource Include="image\4.png" />
+      <None Remove="image\5.png" />
+      <Resource Include="image\5.png" />
+      <None Remove="image\6.png" />
+      <Resource Include="image\6.png" />
+      <None Remove="image\7.png" />
+      <Resource Include="image\7.png" />
+      <None Remove="image\8.png" />
+      <Resource Include="image\8.png" />
+      <None Remove="image\9.png" />
+      <Resource Include="image\9.png" />
+    </ItemGroup>
+
+</Project>
